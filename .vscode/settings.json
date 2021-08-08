@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+        "package-lock.json": true,
+        "**/.DS_Store": true,
+        "node_modules": true,
+        "yarn.lock": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true
+    }
+}
