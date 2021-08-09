@@ -4,6 +4,16 @@ module.exports = {
     darkMode: false,
 
     theme: {
-        extend: {},
+        extend: {
+            maxWidth: {
+                "1200p": "1200px",
+            },
+        },
+    },
+
+    variants: {
+        extend: {
+            margin: ["last"],
+        },
     },
 }

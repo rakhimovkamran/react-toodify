@@ -4,7 +4,11 @@ import { Routing } from "pages"
 import "assets/styles/index.css"
 
 const App = () => {
-    return <Routing />
+    return (
+        <main className="max-w-1200p mx-auto h-screen">
+            <Routing />
+        </main>
+    )
 }
 
 export default withProviders(App)
