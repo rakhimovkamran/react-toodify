@@ -1,15 +1,19 @@
 import { createContext } from "react"
 import { makeAutoObservable } from "mobx"
-import { Task } from "common/types/Task"
+
+import type { Task } from "common/types/Task"
+import { ListStatus } from "common/types/ListStatus"
 
 class AppStoreClass {
     constructor() {
         makeAutoObservable(this)
     }
 
-    tasks: Task[] = [{ _id: `2342342`, isCompleted: false, caption: "Hello" }]
+    listStatus: ListStatus = "All"
+    tasks: Task[] = []
 
-    appendTask = (task: Task) => this.tasks.push(task)
+    setListStatus = (status: ListStatus) => (this.listStatus = status)
+    appendTask = (task: Task) => this.tasks.unshift(task)
 
     toggleTaskCompleteState = (id: string) => {
         const _idx = this.tasks.findIndex(({ _id }) => _id === id)

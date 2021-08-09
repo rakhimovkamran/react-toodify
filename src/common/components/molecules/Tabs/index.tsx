@@ -2,7 +2,7 @@ import { FC } from "react"
 import cn from "classnames"
 
 interface Props {
-    onChange: (item: string) => void
+    onChange: (item: any) => void
     activeTab: string
     items: string[]
 }

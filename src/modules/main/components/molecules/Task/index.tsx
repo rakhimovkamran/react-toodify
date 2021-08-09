@@ -1,6 +1,7 @@
 import { FC } from "react"
 import cn from "classnames"
 
+import { motion } from "framer-motion"
 interface Props {
     onChange: () => void
     isCompleted: boolean
@@ -32,14 +33,34 @@ const Task: FC<Props> = ({ caption, onChange, isCompleted }) => {
         }
     )
 
+    const animation = {
+        initial: {
+            opacity: 0,
+            x: 100,
+        },
+
+        animate: {
+            opacity: 1,
+            x: 0,
+        },
+
+        transition: {
+            x: { type: "spring", stiffness: 300, damping: 35 },
+            opacity: { duration: 0.4 },
+        },
+    }
+
     return (
-        <div className="flex py-3 items-center border-b border-gray-800">
+        <motion.div
+            className="flex py-3 items-center border-b border-gray-800"
+            {...animation}
+        >
             <button onClick={onChange} className={buttonClasses}>
                 <div className={indicatorClasses} />
             </button>
 
             <span className={captionClasses}>{caption}</span>
-        </div>
+        </motion.div>
     )
 }
 

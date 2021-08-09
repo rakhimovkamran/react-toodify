@@ -7,7 +7,7 @@ import { Input } from "common/components/atoms"
 
 const AppendTask = () => {
     const [caption, setCaption] = useState<string>("")
-    const { appendTask } = useContext(AppStore)
+    const { appendTask, setListStatus } = useContext(AppStore)
 
     const handleInputChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setCaption(target.value)
@@ -15,14 +15,18 @@ const AppendTask = () => {
 
     const handleInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
         if (event.key === "Enter" && caption) {
-            appendTask({
-                _id: "_" + Date.now().toString(),
-                isCompleted: false,
-                caption,
-            })
-
+            handleTaskAppend()
+            setListStatus("All")
             setCaption("")
         }
+    }
+
+    const handleTaskAppend = () => {
+        appendTask({
+            _id: "_" + Date.now().toString(),
+            isCompleted: false,
+            caption,
+        })
     }
 
     return (
