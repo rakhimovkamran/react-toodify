@@ -29,7 +29,7 @@ const TaskList = () => {
     }, [listStatus, tasks])
 
     return (
-        <section className="w-full h-full overflow-auto flex flex-col mt-2">
+        <section className="w-full h-full overflow-x-hidden flex flex-col mt-2">
             <AnimateSharedLayout>
                 {filteredTasks!.length > 0 ? (
                     filteredTasks!.map((task) => (
