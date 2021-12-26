@@ -6,7 +6,7 @@ import { ListHeader } from "modules/main/components/templates"
 const Main = () => {
     return (
         <div className="flex h-full items-center justify-center">
-            <section className="w-2/4 h-2/3 bg-gradient-to-tr from-gray-800 to-gray-900 rounded-xl shadow-xl p-8 flex flex-col">
+            <section className="w-full md:w-2/4 h-full md:h-2/3 transition-all bg-gradient-to-tr from-gray-800 to-gray-900 md:rounded-xl shadow-xl p-8 flex flex-col">
                 <ListHeader />
                 <AppendInput />
                 <TaskList />
