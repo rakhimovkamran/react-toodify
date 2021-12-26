@@ -5,7 +5,8 @@ import { observer } from "mobx-react-lite"
 import { AppStore } from "store"
 
 import { EmptyState, Task } from "../../molecules"
-import { Scrollbar } from "common/components/molecules"
+
+// import { Scrollbar } from "common/components/molecules"
 
 const TaskList = () => {
     const { tasks, listStatus, toggleTaskCompleteState } = useContext(AppStore)
